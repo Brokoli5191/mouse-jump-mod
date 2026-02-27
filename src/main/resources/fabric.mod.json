@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "mousejumpmod",
+  "version": "${version}",
+  "name": "Mouse Jump Mod",
+  "description": "Mouse scroll up/down triggers jump.",
+  "authors": ["Brokoli5191"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["dev.brokoli5191.mousejumpmod.MouseJumpModClient"]
+  },
+  "mixins": ["mousejumpmod.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric-api": "*",
+    "minecraft": "~1.21.1",
+    "java": ">=21"
+  }
+}
