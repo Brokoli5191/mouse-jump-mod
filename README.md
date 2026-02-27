@@ -1,6 +1,6 @@
 # Mouse Jump Mod
 
-Fabric mod for Minecraft 1.21.1. Mouse scroll up/down triggers jump. Space still works as default.
+Fabric mod for Minecraft 1.21.11 Mouse scroll up/down triggers jump. Space still works as default.
 
 ## Build
 ```bash
