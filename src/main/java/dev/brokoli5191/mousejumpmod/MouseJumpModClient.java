@@ -2,7 +2,7 @@ package dev.brokoli5191.mousejumpmod;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.minecraft.client.KeyMapping;
+import net.minecraft.client.option.KeyBinding;
 
 public class MouseJumpModClient implements ClientModInitializer {
 
@@ -14,17 +14,17 @@ public class MouseJumpModClient implements ClientModInitializer {
     public void onInitializeClient() {
         ClientTickEvents.END_CLIENT_TICK.register(c -> {
             if (c.player == null) return;
-            KeyMapping jumpKey = c.options.keyJump;
+            KeyBinding jumpKey = c.options.jumpKey;
 
             if (scrolledUp || scrolledDown) {
                 if (c.player.isOnGround()) {
-                    KeyMapping.set(jumpKey.getDefaultKey(), true);
+                    KeyBinding.setKeyPressed(jumpKey.getDefaultKey(), true);
                     scrollJumpActive = true;
                 }
                 scrolledUp = false;
                 scrolledDown = false;
             } else if (scrollJumpActive) {
-                KeyMapping.set(jumpKey.getDefaultKey(), false);
+                KeyBinding.setKeyPressed(jumpKey.getDefaultKey(), false);
                 scrollJumpActive = false;
             }
         });
