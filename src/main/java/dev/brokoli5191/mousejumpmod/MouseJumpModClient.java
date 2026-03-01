@@ -13,7 +13,9 @@ public class MouseJumpModClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(c -> {
             if (c.player == null) return;
             if (scrolledUp || scrolledDown) {
-                c.player.jump();
+                if (c.player.isOnGround()) {
+                    c.player.jump();
+                }
                 scrolledUp = false;
                 scrolledDown = false;
             }
