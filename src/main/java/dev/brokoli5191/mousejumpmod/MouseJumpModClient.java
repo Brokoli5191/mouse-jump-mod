@@ -2,7 +2,7 @@ package dev.brokoli5191.mousejumpmod;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.KeyMapping;
 
 public class MouseJumpModClient implements ClientModInitializer {
 
@@ -14,20 +14,17 @@ public class MouseJumpModClient implements ClientModInitializer {
     public void onInitializeClient() {
         ClientTickEvents.END_CLIENT_TICK.register(c -> {
             if (c.player == null) return;
-            KeyBinding jumpKey = c.options.jumpKey;
+            KeyMapping jumpKey = c.options.keyJump;
 
             if (scrolledUp || scrolledDown) {
                 if (c.player.isOnGround()) {
-                    KeyBinding.setKeyPressed(jumpKey.getDefaultKey(), true);
+                    KeyMapping.set(jumpKey.getDefaultKey(), true);
                     scrollJumpActive = true;
                 }
                 scrolledUp = false;
                 scrolledDown = false;
             } else if (scrollJumpActive) {
-                // Release for exactly one tick after scroll jump.
-                // setKeyPressed(false) only runs once (not every tick),
-                // so Space held down is only briefly interrupted if at all.
-                KeyBinding.setKeyPressed(jumpKey.getDefaultKey(), false);
+                KeyMapping.set(jumpKey.getDefaultKey(), false);
                 scrollJumpActive = false;
             }
         });
