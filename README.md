@@ -8,6 +8,6 @@ Fabric mod for Minecraft 1.21.11 Mouse scroll up/down triggers jump. Space still
 ```
 
 ## Install
-1. Fabric Loader 1.21.1
+1. Fabric Loader 1.21.11
 2. Fabric API
 3. Drop jar into `mods/`
