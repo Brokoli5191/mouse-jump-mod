@@ -17,7 +17,7 @@ public class MouseJumpModClient implements ClientModInitializer {
             KeyBinding jumpKey = c.options.jumpKey;
 
             if (scrolledUp || scrolledDown) {
-                if (c.player.isOnGround()) {
+                if (c.currentScreen == null && c.player.isOnGround()) {
                     KeyBinding.setKeyPressed(jumpKey.getDefaultKey(), true);
                     scrollJumpActive = true;
                 }
