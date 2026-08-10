@@ -6,15 +6,16 @@
   "description": "Mouse scroll up/down triggers jump.",
   "authors": ["Brokoli5191"],
   "license": "MIT",
+  "icon": "assets/mousejumpmod/title.png",
   "environment": "client",
   "entrypoints": {
     "client": ["dev.brokoli5191.mousejumpmod.MouseJumpModClient"]
   },
   "mixins": ["mousejumpmod.mixins.json"],
   "depends": {
-    "fabricloader": ">=0.19.2",
+    "fabricloader": ">=0.19.3",
     "fabric-api": "*",
-    "minecraft": "~26.1.2",
+    "minecraft": "~26.2",
     "java": ">=25"
   }
 }

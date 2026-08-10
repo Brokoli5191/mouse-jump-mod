@@ -2,7 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "dev.brokoli5191.mousejumpmod.mixin",
-  "compatibilityLevel": "JAVA_21",
+  "compatibilityLevel": "JAVA_25",
   "client": ["MouseScrollMixin"],
   "injectors": { "defaultRequire": 1 }
 }

@@ -14,7 +14,7 @@ public class MouseJumpModClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(c -> {
             KeyMapping jumpKey = c.options.keyJump;
 
-            if (c.player == null || c.screen != null) {
+            if (c.player == null || c.gui.screen() != null) {
                 scrollQueued = false;
                 releaseScrollJump(jumpKey);
                 return;
